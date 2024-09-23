@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="gravmagpro - A Python package for gravitational and magnetic data processing.">
+    <title>gravmagpro: Gravitational and Magnetic Data Processing</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+        }
+
+        /* Side Navigation Bar */
+        nav.sidenav {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 20;
+            background-color: #FFEFD5;
+            padding-top: 30px;
+        }
+
+        nav.sidenav ul {
+            list-style: none;
+            padding: 10;
+        }
+
+        nav.sidenav ul li {
+            padding: 5px;
+            padding-left: 30px;
+        }
+
+        nav.sidenav ul li a {
+            color: orange;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        nav.sidenav ul li a:hover {
+            background-color: #1A242F;
+            padding-left: 50px;
+            transition: 0.3s;
+        }
+
+        /* Main content area */
+        main {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-image: url('img/header_back.png');
+            background-color: #2C3E50;
+            color: white;
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.2); /* Adjust color and transparency */
+            background-blend-mode: overlay; /* Ensures background image and color blend */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+/* Section Styling */
+section {
+    margin-bottom: 40px;
+    background-color: #f9f9f9; /* Light gray background for softness */
+    padding: 20px;
+    border-radius: 0px; /* Slightly larger border radius for a smoother look */
+}
+
+section h2 {
+    font-size: 2.5rem; /* Increased font size for a more prominent heading */
+    margin-bottom: 20px; /* Slightly larger margin */
+    color: #2C3E50; /* Dark blue-gray color */
+    text-align: center; /* Centered heading for balance */
+}
+
+section p, section ul {
+    font-size: 1.1rem;
+    line-height: 1.6; /* Reduced line height for better readability */
+    color: #333; /* Darker text color for better contrast */
+}
+
+section ul {
+    padding-left: 20px; /* Indentation for the entire list */
+}
+
+section li {
+    margin-bottom: 10px; /* Space between list items */
+    padding-left: 10px; /* Additional padding for bullet points */
+}
+
+section pre {
+    background-color: #eee;
+    padding: 15px; /* Increased padding for better spacing */
+    border-radius: 5px;
+    font-size: 1rem;
+    overflow-x: auto;
+    border: 1px solid #ddd; /* Subtle border for definition */
+}
+
+section a {
+    color: #2C3E50; /* Consistent link color */
+    text-decoration: underline;
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+section a:hover {
+    color: #1abc9c; /* Change link color on hover for interactivity */
+}
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #FFEFD5;
+            color: white;
+            position: relative;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer .social a {
+            margin: 0 10px;
+            color: white;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Side Navigation Bar -->
+    <nav class="sidenav">
+        <ul>
+            <div style="width: 200px; height: auto;">
+                 <img src="img/logobg.png" style="width: 100%; height: auto; object-fit: cover;">
+            </div>
+            <li><a href="#about">About</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#documentation">Documentation</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#contribute">Contribute</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Header Section -->
+        <header>
+            <h1>gravmagpro</h1>
+            <p>A Python package for processing gravitational and magnetic data.</p>
+        </header>
+        
+        <!-- About Section -->
+<section id="about">
+    <h2>About</h2>
+    <p><strong>GravMagPro</strong> is a commercial Python software package tailored for the processing and analysis of gravitational and magnetic field data, specifically designed for oil & gas, mineral exploration, and other geophysical surveys. It offers an industry-standard suite of tools that streamline data processing and enhance decision-making in exploration projects.</p>
+    
+    <h3>Key Features</h3>
+    <ul>
+        <li><strong>Basic Field Data Corrections</strong>: Includes automatic corrections for common issues in gravity and magnetic data, such as:
+            <ul>
+                <li><strong>Instrument Drift:</strong> Compensates for temporal changes in instrument readings.</li>
+                <li><strong>Base Station Correction:</strong> Ensures consistency by adjusting for base station readings for magnetic survey.</li>
+                <li><strong>Latitude Correction:</strong> Adjusts for variations in the Earth's gravitational field with latitude.</li>
+                <li><strong>Free-Air Correction:</strong> Accounts for elevation differences by adjusting gravity values.</li>
+                <li><strong>Bouger Correction:</strong> Corrects for the gravitational effect of the terrain mass between the measurement point and sea level.</li>
+                <li><strong>Terrain Correction:</strong> Further refines the Bouger correction by considering detailed terrain models.</li>
+            </ul>
+        </li>
+        <li><strong>Advanced Data Processing</strong>: Filtering, transforming, and enhancing gravity and magnetic data for deeper insights.</li>
+        <li><strong>3D and 2D Modeling & Inversion</strong>: Tools for generating and visualizing subsurface models for accurate exploration and resource estimation.</li>
+        <li><strong>Anomaly Detection</strong>: Pinpoints and analyzes gravity and magnetic anomalies to help locate potential resource deposits.</li>
+        <li><strong>Customizable Workflows</strong>: Modular pipelines that adapt to various exploration needs, from large-scale regional studies to detailed site analyses.</li>
+    </ul>
+
+    <p><strong>GravMagPro</strong> is available under a modular pricing system, allowing users to choose and pay for the features that align with their project requirements. This ensures flexibility and cost efficiency for projects ranging from basin-wide surveys to focused resource exploration.</p>
+</section>
+
+
+        <!-- Installation Section -->
+        <section id="installation">
+    <h2>Installation</h2>
+    <p>To install <strong>gravmagpro</strong>, run the following command:</p>
+    <p>For local installation using a wheel package:</p>
+    <pre><code>pip install /path/to/grav-mag.whl</code></pre>
+    <p>For a .tar.gz distribution file:</p>
+    <pre><code>pip install /path/to/grav-mag.tar.gz</code></pre>
+    
+    <h3>Regular Updates</h3>
+    <p>Users will need to download the latest distribution files and reinstall the package locally. The changelogs or update notifications will be provided via email or a secure communication channel.</p>
+
+    <h3>License Enforcement</h3>
+    <p>If you’re distributing a chargeable product, it’s essential to enforce licensing rules:</p>
+    <ul>
+        <li><strong>License File:</strong> Include a LICENSE.txt file in your package that outlines the terms of use.</li>
+        <li><strong>License Key:</strong> Implement a license key system in the package's code. The package could check the key upon installation or usage.</li>
+        <li><strong>Payment Gateways:</strong> Use external services like Stripe, Paddle, or Gumroad for handling payments, and provide users with access to the package only after verification.</li>
+    </ul>
+    
+    <p>For more detailed installation instructions, visit the <a href="installation.html">Installation Guide</a>.</p>
+</section>
+
+        <!-- Documentation Section -->
+        <section id="documentation">
+            <h2>Documentation</h2>
+            <p>Explore the full documentation to learn how to use <strong>gravmagpro</strong> in your projects.</p>
+            <ul>
+                <li><a href="getting_started.html">Getting Started</a></li>
+                <li><a href="api_reference.html">API Reference</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+            </ul>
+        </section>
+
+        <!-- Examples Section -->
+        <section id="examples">
+            <h2>Examples</h2>
+            <p>Check out examples demonstrating key functionality:</p>
+            <ul>
+                <li><a href="example1.html">Gravitational Field Data Processing</a></li>
+                <li><a href="example2.html">Magnetic Data Visualization</a></li>
+                <li><a href="example3.html">3D Geophysical Models</a></li>
+            </ul>
+        </section>
+
+        <!-- Contribution Section -->
+        <section id="contribute">
+            <h2>Contribute</h2>
+            <p>We welcome contributions! Visit our <a href="https://github.com/yourusername/gravmagpro">GitHub repository</a> to get involved.</p>
+        </section>
+
+        
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 gravmagpro. Built by <a href="https://yourcompany.com">Your Company</a>.</p>
+        <div class="social">
+            <a href="https://github.com/yourusername/gravmagpro" class="fab fa-github"></a>
+            <a href="https://twitter.com/yourcompany" class="fab fa-twitter"></a>
+        </div>
+    </footer>
+</body>
+</html>
